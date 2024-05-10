@@ -13,8 +13,8 @@
 
 .wrapper {
   padding: 4rem 0;
-  max-width: min(90%, 1200px);
-  margin: 0 auto;
+  width: min(900px, 100% - 3rem);
+  margin-inline: auto;
 }
 
 body {
@@ -23,4 +23,34 @@ body {
   padding: 0;
   background-color: var(--background-color);
   color: var(--text-color);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #323232;
+  padding: 1rem;
+}
+
+caption,
+td,
+th {
+  padding: 0.7rem;
+}
+th,
+caption {
+  text-align: left;
+}
+
+caption {
+  background: hsl(0 0% 0%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+th {
+  background-color: hsl(0 0% 0% / 0.5);
+}
+
+tr:nth-of-type(2n) {
+  background-color: hsl(0 0% 0% / 0.15);
 }
