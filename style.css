@@ -54,3 +54,34 @@ th {
 tr:nth-of-type(2n) {
   background-color: hsl(0 0% 0% / 0.15);
 }
+
+/* mobile first */
+@media (max-width: 56rem) {
+  th {
+    display: none;
+  }
+
+  td {
+    display: block;
+  }
+
+  td:first-child {
+    padding-top: 2rem;
+  }
+
+  td:last-child {
+    padding-bottom: 2rem;
+  }
+
+  td {
+    padding: 0.5rem 1rem;
+  }
+
+  td::before {
+    content: attr(data-label) ':\00a0';
+    display: inline-block;
+    font-weight: bold;
+
+    text-transform: capitalize;
+  }
+}
