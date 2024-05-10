@@ -9,6 +9,8 @@
 :root {
   --background-color: #1d232a;
   --text-color: #a6adbb;
+  --text-color-up: hsl(120 100% 50% / 0.6);
+  --text-color-down: hsl(0 100% 50% / 0.6);
 }
 
 .wrapper {
@@ -47,8 +49,16 @@ caption {
   font-weight: bold;
   text-transform: uppercase;
 }
+
 th {
   background-color: hsl(0 0% 0% / 0.5);
+}
+
+td.positive {
+  color: var(--text-color-up);
+}
+td.negative {
+  color: var(--text-color-down);
 }
 
 tr:nth-of-type(2n) {
@@ -62,7 +72,10 @@ tr:nth-of-type(2n) {
   }
 
   td {
-    display: block;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 15ch auto;
+    padding: 0.5rem 1rem;
   }
 
   td:first-child {
@@ -73,14 +86,11 @@ tr:nth-of-type(2n) {
     padding-bottom: 2rem;
   }
 
-  td {
-    padding: 0.5rem 1rem;
-  }
-
   td::before {
     content: attr(data-label) ':\00a0';
     display: inline-block;
     font-weight: bold;
+    color: var(--text-color);
 
     text-transform: capitalize;
   }
